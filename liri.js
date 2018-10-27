@@ -95,6 +95,16 @@ var lookupMovie = function() {
   );
 };
 
+var doWhatItSays = function() {
+  fs.readFile("random.txt", "utf8", function(err, data) {
+    if (err) throw err;
+    var doArr = data.split(",");
+    if (doArr.length == 2) {
+      choice(doArr[0], doArr[1]);
+    }
+  });
+};
+
 var choice = function(caseData, functionData) {
   switch (caseData) {
     case "spotify-this-song":
@@ -110,6 +120,9 @@ var choice = function(caseData, functionData) {
       } else {
         getMovie(functionData);
       }
+      break;
+    case "do-what-it-says":
+      doWhatItSays();
       break;
     default:
       console.log("LIRI can't handle your request.");
