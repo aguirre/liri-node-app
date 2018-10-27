@@ -25,10 +25,9 @@ var getSpotify = function(songName) {
 
     var songs = data.tracks.items;
     for (var i = 0; i < songs.length; i++) {
-      console.log(i);
-      console.log("artist(s): " + songs[i].artists.map(getArtist));
-      console.log("song name: " + songs[i].name);
-      console.log("preview song: " + songs[i].preview_url);
+      console.log("Artist: " + songs[i].artists.map(getArtist));
+      console.log("Song: " + songs[i].name);
+      console.log("Preview: " + songs[i].preview_url);
       console.log("album: " + songs[i].album.name);
       console.log("----------------------------------------------------");
     }
@@ -39,7 +38,7 @@ function lookupSong() {
   var spotify = new Spotify(keys.spotify);
 
   spotify.search(
-    { type: "track", query: "san francisco knights", limit: 5 },
+    { type: "track", query: "San Francisco Knights", limit: 5 },
     function(err, data) {
       if (err) {
         console.log("Error occurred: " + err);
@@ -48,18 +47,55 @@ function lookupSong() {
 
       var songs = data.tracks.items;
       for (var i = 0; i < songs.length; i++) {
-        console.log(i);
-        console.log("artist(s): " + songs[i].artists.map(getArtist));
-        console.log("song name: " + songs[i].name);
-        console.log("preview song: " + songs[i].preview_url);
-        console.log("album: " + songs[i].album.name);
+        console.log("Artist: " + songs[i].artists.map(getArtist));
+        console.log("Song: " + songs[i].name);
+        console.log("Preview: " + songs[i].preview_url);
+        console.log("Album: " + songs[i].album.name);
         console.log("----------------------------------------------------");
       }
     }
   );
 }
 
-var pick = function(caseData, functionData) {
+var getMovie = function(movieName) {
+  request(
+    "http://www.omdbapi.com/?t=" + movieName + "&apikey=trilogy",
+    function(error, response, body) {
+      if (!error && response.statusCode == 200) {
+        var movieData = JSON.parse(body);
+        console.log("Movie Title: " + movieData.Title);
+        console.log("IMDB Rating: " + movieData.imdbRating);
+        console.log("Country Produced In: " + movieData.Country);
+        console.log("Language: " + movieData.Language);
+        console.log("Plot: " + movieData.Plot);
+        console.log("Actors: " + movieData.Actors);
+        console.log(movieData.Ratings[1]);
+        console.log("Release Year: " + movieData.Year);
+      }
+    }
+  );
+};
+
+var lookupMovie = function() {
+  request(
+    "http://www.omdbapi.com/?t=" + "Lucky Number Slevin" + "&apikey=trilogy",
+    function(error, response, body) {
+      if (!error && response.statusCode == 200) {
+        var movieData = JSON.parse(body);
+        console.log("Movie Title: " + movieData.Title);
+        console.log("IMDB Rating: " + movieData.imdbRating);
+        console.log("Country Produced In: " + movieData.Country);
+        console.log("Language: " + movieData.Language);
+        console.log("Plot: " + movieData.Plot);
+        console.log("Actors: " + movieData.Actors);
+        console.log(movieData.Ratings[1]);
+        console.log("Release Year: " + movieData.Year);
+      }
+    }
+  );
+};
+
+var choice = function(caseData, functionData) {
   switch (caseData) {
     case "spotify-this-song":
       if (functionData === undefined) {
@@ -68,13 +104,20 @@ var pick = function(caseData, functionData) {
         getSpotify(functionData);
       }
       break;
+    case "movie-this":
+      if (functionData === undefined) {
+        lookupMovie();
+      } else {
+        getMovie(functionData);
+      }
+      break;
     default:
-      console.log("LIRI can not handle your request.");
+      console.log("LIRI can't handle your request.");
   }
 };
 
 var runThis = function(argOne, argTwo) {
-  pick(argOne, argTwo);
+  choice(argOne, argTwo);
 };
 
 runThis(process.argv[2], process.argv[3]);
