@@ -39,7 +39,7 @@ function lookupSong() {
   var spotify = new Spotify(keys.spotify);
 
   spotify.search(
-    { type: "track", query: "the sign ace of base", limit: 5 },
+    { type: "track", query: "san francisco knights", limit: 5 },
     function(err, data) {
       if (err) {
         console.log("Error occurred: " + err);
@@ -69,7 +69,7 @@ var pick = function(caseData, functionData) {
       }
       break;
     default:
-      console.log("LIRI does not know how to handle that");
+      console.log("LIRI can not handle your request.");
   }
 };
 
