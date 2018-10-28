@@ -8,7 +8,7 @@ node liri.js spotify-this-song "song name here"
 
 This will show the following information about the song in your terminal/bash window:
 
-- Artist(s)
+- Artist(s).
 - The song's name.
 - A preview link of the song from Spotify.
 - The album that the song is from.
@@ -45,9 +45,9 @@ node liri.js concert-this "artist/band name here"
 
 This will search the Bands in Town Artist Events API for an artist and render the following information about each event to the terminal:
 
-- Name of the venue
-- Venue location
-- Date of the Event (use moment to format this as "MM/DD/YYYY")
+- Name of the venue.
+- Venue location.
+- Date of the Event.
 
 ### Exampe of Bands in Town API Lookup:
 
