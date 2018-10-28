@@ -5,7 +5,7 @@ Example of Spotify Lookup:
 
 <img src="images/movie.gif" alt="movie-this">
 
-#Bands in Town API Lookup
+# Bands in Town API Lookup
 
 ```
 Command: node liri.js concert-this "artist/band name here"
