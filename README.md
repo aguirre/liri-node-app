@@ -5,8 +5,12 @@ Example of Spotify Lookup:
 
 <img src="images/movie.gif" alt="movie-this">
 
-Bands in Town API Lookup<br>
-Command: node liri.js concert-this "artist/band name here"<br>
+#Bands in Town API Lookup
+
+```
+Command: node liri.js concert-this "artist/band name here"
+```
+
 This will search the Bands in Town Artist Events API for an artist and render the following information about each event to the terminal:<br>
 
 - Name of the venue
