@@ -6,6 +6,7 @@ node liri.js
 
 ### This will show the LIRI Bot Menu in your terminal.
 
+<br>
 ## Spotify API Lookup
 
 ```
