@@ -4,14 +4,14 @@
 node liri.js
 ```
 
-### This will show the LIRI Bot Menu in your terminal.
+### This will show LIRI Bot's Menu in your terminal.
 
 <br>
 
 ## Spotify API Lookup
 
 ```
-node liri.js spotify-this-song "song name here"
+node liri.js spotify-this-song "song name"
 ```
 
 This will search the Spotify API and show the following information about the song in your terminal:
@@ -28,7 +28,7 @@ This will search the Spotify API and show the following information about the so
 ## OMDB API Lookup
 
 ```
-node liri.js movie-this "movie name here"
+node liri.js movie-this "movie name"
 ```
 
 This will search the OMDB API and output the following information about the movie to your terminal:
@@ -48,16 +48,16 @@ This will search the OMDB API and output the following information about the mov
 ## Bands in Town API Lookup
 
 ```
-node liri.js concert-this "artist/band name here"
+node liri.js concert-this "artist/band name"
 ```
 
-This will search the Bands in Town Artist Events API for an artist and render the following information about each event to the terminal:
+This will search the Bands in Town API for an artist and render the following information about each event to the terminal:
 
 - Name of the venue
 - Venue location
 - Date of the Event
 
-### Exampe of Bands in Town API Lookup:
+### Example of Bands in Town API Lookup:
 
 <img src="images/concert.gif" alt="concert-this">
 
@@ -70,6 +70,6 @@ node liri.js do-what-it-says
 - Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 - It should run `spotify-this-song` for "I Want it That Way" as follows the text in `random.txt`.
 
-### Examle of Do What It Says:
+### Example of Do What It Says:
 
 <img src="images/do.gif" alt="do-what-it-says">
