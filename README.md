@@ -13,7 +13,8 @@ This will show the following information about the song in your terminal/bash wi
 - A preview link of the song from Spotify.
 - The album that the song is from.
 
-Example of Spotify Lookup:
+### Example of Spotify Lookup:
+
 <img src="images/song.gif" alt="spotify-this-song">
 
 ## OMDB API Lookup
@@ -32,7 +33,8 @@ This will output the following information to your terminal/bash window:
 - Plot of the movie.
 - Actors in the movie.
 
-Example of OMDB Movie API Lookup:
+### Example of OMDB Movie API Lookup:
+
 <img src="images/movie.gif" alt="movie-this">
 
 ## Bands in Town API Lookup
@@ -47,7 +49,8 @@ This will search the Bands in Town Artist Events API for an artist and render th
 - Venue location
 - Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-Exampe of Bands in Town API Lookup:
+### Exampe of Bands in Town API Lookup:
+
 <img src="images/concert.gif" alt="concert-this">
 
 ## Do What It Says
@@ -60,5 +63,6 @@ node liri.js do-what-it-says
 - It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
 - Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
-Examle of Do What It Says:
+### Examle of Do What It Says:
+
 <img src="images/do.gif" alt="do-what-it-says">
