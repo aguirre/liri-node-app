@@ -7,6 +7,7 @@ var fs = require("fs");
 var moment = require("moment");
 moment().format();
 
+//Functions for spotify-this-song command
 var getArtist = function(artist) {
   return artist.name;
 };
@@ -57,6 +58,7 @@ function lookupSong() {
   );
 }
 
+//Functions for movie-this command
 var getMovie = function(movieName) {
   request(
     "http://www.omdbapi.com/?t=" + movieName + "&apikey=trilogy",
@@ -95,11 +97,12 @@ var lookupMovie = function() {
   );
 };
 
+//Function for concert-this command
 function getConcert(concertArtist) {
   request(
     "https://rest.bandsintown.com/artists/" +
       concertArtist +
-      "/events?app_id=2fc12df0-119c-442a-9a12-7ee5959b5601&date=upcoming",
+      "/events?app_id=trilogy&date=upcoming",
     function(error, response, body) {
       if (!error && response.statusCode == 200) {
         var concertData = JSON.parse(body);
@@ -123,6 +126,7 @@ function getConcert(concertArtist) {
   );
 }
 
+//Function for do-what-it-says command
 var doWhatItSays = function() {
   fs.readFile("random.txt", "utf8", function(err, data) {
     if (err) throw err;
@@ -133,6 +137,7 @@ var doWhatItSays = function() {
   });
 };
 
+// LIRI command parameters
 var choice = function(caseData, functionData) {
   switch (caseData) {
     case "spotify-this-song":
@@ -160,11 +165,15 @@ var choice = function(caseData, functionData) {
     case "do-what-it-says":
       doWhatItSays();
       break;
+    // Default message for liri.js or error
     default:
-      console.log("LIRI can't handle your request.");
+      console.log(
+        'LIRI Command Menu: spotify-this-song "song name" | movie-this "movie name" | concert-this "band/artist name" | do-what-it-says'
+      );
   }
 };
 
+//Funtion to take in command and value
 var runThis = function(argOne, argTwo) {
   choice(argOne, argTwo);
 };
