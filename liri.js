@@ -29,7 +29,7 @@ var getSpotify = function(songName) {
       console.log("Artist: " + songs[i].artists.map(getArtist));
       console.log("Song: " + songs[i].name);
       console.log("Preview: " + songs[i].preview_url);
-      console.log("album: " + songs[i].album.name);
+      console.log("Album: " + songs[i].album.name);
       console.log("----------------------------------------------------");
     }
   });
@@ -66,13 +66,12 @@ var getMovie = function(movieName) {
       if (!error && response.statusCode == 200) {
         var movieData = JSON.parse(body);
         console.log("Movie Title: " + movieData.Title);
+        console.log("Release Year: " + movieData.Year);
         console.log("IMDB Rating: " + movieData.imdbRating);
         console.log("Country Produced In: " + movieData.Country);
         console.log("Language: " + movieData.Language);
         console.log("Plot: " + movieData.Plot);
         console.log("Actors: " + movieData.Actors);
-        console.log(movieData.Ratings[1]);
-        console.log("Release Year: " + movieData.Year);
       }
     }
   );
@@ -85,13 +84,12 @@ var lookupMovie = function() {
       if (!error && response.statusCode == 200) {
         var movieData = JSON.parse(body);
         console.log("Movie Title: " + movieData.Title);
+        console.log("Release Year: " + movieData.Year);
         console.log("IMDB Rating: " + movieData.imdbRating);
         console.log("Country Produced In: " + movieData.Country);
         console.log("Language: " + movieData.Language);
         console.log("Plot: " + movieData.Plot);
         console.log("Actors: " + movieData.Actors);
-        console.log(movieData.Ratings[1]);
-        console.log("Release Year: " + movieData.Year);
       }
     }
   );
