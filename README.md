@@ -49,4 +49,16 @@ This will search the Bands in Town Artist Events API for an artist and render th
 
 Exampe of Bands in Town API Lookup:
 <img src="images/concert.gif" alt="concert-this">
+
+## Do What It Says
+
+```
+node liri.js do-what-it-says
+```
+
+- Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
+- It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
+- Edit the text in random.txt to test out the feature for movie-this and concert-this.
+
+Examle of Do What It Says:
 <img src="images/do.gif" alt="do-what-it-says">
