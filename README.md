@@ -4,11 +4,7 @@
 node liri.js
 ```
 
-### This will show the LIRI Bot Menu
-
-```
-LIRI Command Menu: spotify-this-song "song name" | movie-this "movie name" | concert-this "band/artist name" | do-what-it-says
-```
+### This will show the LIRI Bot Menu in your terminal.
 
 ## Spotify API Lookup
 
