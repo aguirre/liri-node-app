@@ -16,7 +16,7 @@ This will show the following information about the song in your terminal/bash wi
 Example of Spotify Lookup:
 <img src="images/song.gif" alt="spotify-this-song">
 
-## OMDB Movie API Lookup
+## OMDB API Lookup
 
 ```
 node liri.js movie-this "movie name here"
