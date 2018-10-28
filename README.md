@@ -1,17 +1,30 @@
-LIRI Node APP
+#LIRI Node APP
+
+## Spotify API Lookup
+
+```
+node liri.js spotify-this-song "song name here"
+```
+
+This will show the following information about the song in your terminal/bash window:
+
+- Artist(s)
+- The song's name
+- A preview link of the song from Spotify
+- The album that the song is from
 
 Example of Spotify Lookup:
 <img src="images/song.gif" alt="spotify-this-song">
 
 <img src="images/movie.gif" alt="movie-this">
 
-# Bands in Town API Lookup
+## Bands in Town API Lookup
 
 ```
-Command: node liri.js concert-this "artist/band name here"
+node liri.js concert-this "artist/band name here"
 ```
 
-This will search the Bands in Town Artist Events API for an artist and render the following information about each event to the terminal:<br>
+This will search the Bands in Town Artist Events API for an artist and render the following information about each event to the terminal:
 
 - Name of the venue
 - Venue location
