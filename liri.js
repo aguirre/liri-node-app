@@ -95,6 +95,34 @@ var lookupMovie = function() {
   );
 };
 
+function getConcert(concertArtist) {
+  request(
+    "https://rest.bandsintown.com/artists/" +
+      concertArtist +
+      "/events?app_id=2fc12df0-119c-442a-9a12-7ee5959b5601&date=upcoming",
+    function(error, response, body) {
+      if (!error && response.statusCode == 200) {
+        var concertData = JSON.parse(body);
+
+        console.log("Artist(s): " + concertData[0].lineup);
+        console.log("Venue Name: " + concertData[0].venue.name);
+        console.log(
+          "Location: " +
+            concertData[0].venue.city +
+            ", " +
+            concertData[0].venue.region +
+            " " +
+            concertData[0].venue.country
+        );
+        console.log(
+          "Date of Event: " +
+            moment(concertData[0].datetime).format("MM-DD-YYYY")
+        );
+      }
+    }
+  );
+}
+
 var doWhatItSays = function() {
   fs.readFile("random.txt", "utf8", function(err, data) {
     if (err) throw err;
@@ -119,6 +147,14 @@ var choice = function(caseData, functionData) {
         lookupMovie();
       } else {
         getMovie(functionData);
+      }
+      break;
+    case "concert-this":
+      if (functionData === undefined) {
+        console.log("Enter Artist or Band name.");
+        return;
+      } else {
+        getConcert(functionData);
       }
       break;
     case "do-what-it-says":
